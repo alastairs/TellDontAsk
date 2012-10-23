@@ -1,12 +1,16 @@
+using System.Collections.Generic;
+
 namespace TellDontAsk.ObjectOriented
 {
     public abstract class Container
     {
         public void MixWith(Utensil utensil)
         {
-            utensil.Mix(this.Ingredients);
+            utensil.Mix(Ingredients);
         }
 
-        private object Ingredients { get; set; }
+        protected ICollection<Ingredient> Ingredients { get; set; }
+
+        public abstract void Add(Ingredient ingredient);
     }
 }
