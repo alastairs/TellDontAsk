@@ -45,6 +45,7 @@
     <Compile Include="ObjectOriented\Ingredient.cs" />
     <Compile Include="Procedural\Baker.cs" />
     <Compile Include="Procedural\Bowl.cs" />
+    <Compile Include="Procedural\CakeMix.cs" />
     <Compile Include="Procedural\CasterSugar.cs" />
     <Compile Include="Procedural\Egg.cs" />
     <Compile Include="Procedural\Ingredient.cs" />

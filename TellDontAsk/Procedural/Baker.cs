@@ -43,6 +43,7 @@ namespace TellDontAsk.Procedural
             oven.Add(tin2);
 
             oven.Timer = TimeSpan.FromMinutes(20);
+            oven.Bake();
 
             oven.TurnedOn = false;
 

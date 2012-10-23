@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace TellDontAsk.Procedural
 {
@@ -7,11 +10,23 @@ namespace TellDontAsk.Procedural
         public bool TurnedOn { get; set; }
         public int Temperature { get; set; }
 
-        public void Add(CakeTin tin1)
+        private readonly ICollection<CakeTin> tins = new Collection<CakeTin>();
+
+        public void Add(CakeTin tin)
         {
-            throw new NotImplementedException();
+            tins.Add(tin);
         }
 
         public TimeSpan Timer { get; set; }
+
+        public void Bake()
+        {
+            Thread.Sleep(Timer);
+
+            foreach (var tin in tins)
+            {
+                tin.Contents.IsCooked = true;
+            }
+        }
     }
 }

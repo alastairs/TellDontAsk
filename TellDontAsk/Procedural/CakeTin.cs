@@ -2,17 +2,21 @@ namespace TellDontAsk.Procedural
 {
     internal class CakeTin
     {
+        private int size;
+        
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="i">The size of the cake tin in cm</param>
-        public CakeTin(int i)
+        /// <param name="size">The size of the cake tin in cm</param>
+        public CakeTin(int size)
         {
-            
+            this.size = size;
         }
 
         public bool BaseIsGreased { get; set; }
         public bool SideIsGreased { get; set; }
+
+        public CakeMix Contents { get; private set; }
 
         public void GreaseBase(Butter knobOfButter)
         {
@@ -24,9 +28,9 @@ namespace TellDontAsk.Procedural
             SideIsGreased = true;
         }
 
-        public void AddMix(object mix)
+        public void AddMix(CakeMix mix)
         {
-            throw new System.NotImplementedException();
+            Contents = mix;
         }
     }
 }

@@ -1,20 +1,23 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TellDontAsk.Procedural
 {
     internal class Bowl
     {
+        private IEnumerable<Ingredient> ingredients;
+
         public void Add(params Ingredient[] ingredients)
         {
-            throw new System.NotImplementedException();
+            this.ingredients = ingredients;
         }
 
         public void Mix()
         {
-            throw new System.NotImplementedException();
+            CakeMix = new CakeMix();
+            ingredients = Enumerable.Empty<Ingredient>();
         }
 
-        public object CakeMix
-        {
-            get { throw new System.NotImplementedException(); }
-        }
+        public CakeMix CakeMix { get; private set; }
     }
 }

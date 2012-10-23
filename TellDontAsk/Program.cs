@@ -1,11 +1,10 @@
-﻿using TellDontAsk.Procedural;
-
-namespace TellDontAsk
+﻿namespace TellDontAsk
 {
     class Program
     {
         static void Main(string[] args)
         {
+            // Don't run this program. The below line will take 1hr 20 minutes to complete.
             new Procedural.Baker().BakeVictoriaSponge();
             
 
