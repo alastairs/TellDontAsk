@@ -6,6 +6,37 @@ namespace TellDontAsk.Tests
     public class ProbabilityFacts
     {
         [TestFixture]
+        public class EqualsShould
+        {
+            [Test]
+            public void ReturnTrueIfTheInstancesAreTheSameObject()
+            {
+                var probability = new Probability(0.25);
+                var otherProbability = probability;
+
+                Assert.That(otherProbability, Is.EqualTo(probability));
+            }
+
+            [Test]
+            public void ReturnTrueIfTheInstancesRepresentTheSameValue()
+            {
+                var probability = new Probability(0.25);
+                var otherProbability = new Probability(0.25);
+
+                Assert.That(otherProbability, Is.EqualTo(probability));
+            }
+
+            [Test]
+            public void ReturnFalseIfTheInstancesRepresentDifferentValues()
+            {
+                var probability = new Probability(0.25);
+                var otherProbability = new Probability(1/3);
+
+                Assert.That(otherProbability, Is.Not.EqualTo(probability));
+            }
+        }
+
+        [TestFixture]
         public class CombinedWithShould
         {
             [TestCase(0.5, 0.25)]
@@ -35,41 +66,6 @@ namespace TellDontAsk.Tests
 
                 Assert.That(inverseProbability, Is.EqualTo(new Probability(1 - rawProbability)));
             }
-        }
-    }
-
-    public class Probability
-    {
-        private readonly double rawProbability;
-
-        public Probability(double rawProbability)
-        {
-            this.rawProbability = rawProbability;
-        }
-
-        public Probability CombinedWith(Probability probability)
-        {
-            return new Probability(rawProbability * probability.rawProbability);
-        }
-
-        public Probability InverseOf()
-        {
-            return new Probability(1 - rawProbability);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as Probability);
-        }
-
-        public override int GetHashCode()
-        {
-            return rawProbability.GetHashCode();
-        }
-
-        protected bool Equals(Probability other)
-        {
-            return rawProbability.Equals(other.rawProbability);
         }
     }
 }
