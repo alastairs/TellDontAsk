@@ -41,32 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObjectOriented\Butter.cs" />
-    <Compile Include="ObjectOriented\CasterSugar.cs" />
-    <Compile Include="ObjectOriented\Egg.cs" />
-    <Compile Include="ObjectOriented\MixingBowl.cs" />
-    <Compile Include="ObjectOriented\Cake.cs" />
-    <Compile Include="ObjectOriented\Container.cs" />
-    <Compile Include="ObjectOriented\Ingredient.cs" />
-    <Compile Include="ObjectOriented\Oven.cs" />
-    <Compile Include="Procedural\Baker.cs" />
-    <Compile Include="Procedural\Bowl.cs" />
-    <Compile Include="Procedural\CakeMix.cs" />
-    <Compile Include="Procedural\CasterSugar.cs" />
-    <Compile Include="Procedural\Egg.cs" />
-    <Compile Include="Procedural\Ingredient.cs" />
-    <Compile Include="Procedural\Butter.cs" />
-    <Compile Include="Procedural\CakeTin.cs" />
-    <Compile Include="Procedural\Oven.cs" />
-    <Compile Include="Procedural\SelfRaisingFlour.cs" />
-    <Compile Include="Procedural\VanillaExtract.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ObjectOriented\Utensil.cs" />
-    <Compile Include="ObjectOriented\SelfRaisingFlour.cs" />
-    <Compile Include="ObjectOriented\VanillaExtract.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ObjectOriented\" />
+    <Folder Include="Procedural\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
