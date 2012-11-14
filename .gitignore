@@ -7,3 +7,6 @@ _ReSharper.*/
 *.user
 
 *.ncrunch*
+
+packages/
+!packages/repositories.config
