@@ -1,4 +1,4 @@
-namespace TellDontAsk.Tests
+namespace TellDontAsk
 {
     public class Probability
     {
