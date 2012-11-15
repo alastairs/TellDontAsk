@@ -2,9 +2,9 @@ namespace TellDontAsk
 {
     public class Probability
     {
-        private readonly double rawProbability;
+        private readonly decimal rawProbability;
 
-        public Probability(double rawProbability)
+        public Probability(decimal rawProbability)
         {
             this.rawProbability = rawProbability;
         }

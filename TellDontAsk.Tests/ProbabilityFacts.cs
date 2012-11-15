@@ -11,7 +11,7 @@ namespace TellDontAsk.Tests
             [Test]
             public void ReturnTrueIfTheInstancesAreTheSameObject()
             {
-                var probability = new Probability(0.25);
+                var probability = new Probability(0.25m);
                 var otherProbability = probability;
 
                 Assert.That(otherProbability, Is.EqualTo(probability));
@@ -20,8 +20,8 @@ namespace TellDontAsk.Tests
             [Test]
             public void ReturnTrueIfTheInstancesRepresentTheSameValue()
             {
-                var probability = new Probability(0.25);
-                var otherProbability = new Probability(0.25);
+                var probability = new Probability(0.25m);
+                var otherProbability = new Probability(0.25m);
 
                 Assert.That(otherProbability, Is.EqualTo(probability));
             }
@@ -29,7 +29,7 @@ namespace TellDontAsk.Tests
             [Test]
             public void ReturnFalseIfTheInstancesRepresentDifferentValues()
             {
-                var probability = new Probability(0.25);
+                var probability = new Probability(0.25m);
                 var otherProbability = new Probability(1/3);
 
                 Assert.That(otherProbability, Is.Not.EqualTo(probability));
@@ -42,7 +42,7 @@ namespace TellDontAsk.Tests
             [TestCase(0.5, 0.25)]
             [TestCase(0.75, 0.25)]
             [TestCase(0.3, 0.6666666666666667)]
-            public void ReturnThisProbabilityMultipliedByTheArgument(double firstProbability, double secondProbability)
+            public void ReturnThisProbabilityMultipliedByTheArgument(decimal firstProbability, decimal secondProbability)
             {
                 var probability = new Probability(firstProbability);
 
@@ -58,7 +58,7 @@ namespace TellDontAsk.Tests
             [TestCase(0.25)]
             [TestCase(0.6666666666667)]
             [TestCase(Math.PI - 3)]
-            public void ReturnThisProbabilitySubtractedFrom1(double rawProbability)
+            public void ReturnThisProbabilitySubtractedFrom1(decimal rawProbability)
             {
                 var probability = new Probability(rawProbability);
 
@@ -74,7 +74,7 @@ namespace TellDontAsk.Tests
             [TestCase(0.5, 0.25)]
             [TestCase(0.75, 0.25)]
             [TestCase(0.3, 0.6666666666666667)]
-            public void ReturnAPlusBLessAMultipliedByB(double a, double b)
+            public void ReturnAPlusBLessAMultipliedByB(decimal a, decimal b)
             {
                 var probabilityOfA = new Probability(a);
                 var probabilityOfB = new Probability(b);
