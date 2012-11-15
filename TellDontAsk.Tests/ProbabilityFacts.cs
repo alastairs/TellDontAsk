@@ -67,5 +67,22 @@ namespace TellDontAsk.Tests
                 Assert.That(inverseProbability, Is.EqualTo(new Probability(1 - rawProbability)));
             }
         }
+
+        [TestFixture]
+        public class EitherShould
+        {
+            [TestCase(0.5, 0.25)]
+            [TestCase(0.75, 0.25)]
+            [TestCase(0.3, 0.6666666666666667)]
+            public void ReturnAPlusBLessAMultipliedByB(double a, double b)
+            {
+                var probabilityOfA = new Probability(a);
+                var probabilityOfB = new Probability(b);
+
+                var eitherEvent = probabilityOfA.Either(probabilityOfB);
+
+                Assert.That(eitherEvent, Is.EqualTo(new Probability(a + b - (a*b))));
+            }
+        }
     }
 }
